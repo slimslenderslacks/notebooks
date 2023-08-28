@@ -1,0 +1,13 @@
+{:deps
+ {org.clojure/clojure {:mvn/version "1.11.1"}
+  io.github.nextjournal/markdown {:mvn/version "0.5.144"}
+  cheshire/cheshire {:mvn/version "5.11.0"}}
+ :aliases
+ {:build {:ns-default build
+          :deps {io.github.clojure/tools.build {:git/tag "v0.8.3" :git/sha "0d20256c40b5a6b6adbcbdf7d0c52cf9e22e994d"}}}
+  :native {:jvm-opts ["-Xmx2g"
+                      "-server"
+                      "-Dborkdude.dynaload.aot=true"
+                      "-Dclojure.compiler.direct-linking=true"
+                      "-Dclojure.spec.skip-macros=true"]
+           :extra-deps {com.github.clj-easy/graal-build-time {:mvn/version "0.1.4"}}}}}
